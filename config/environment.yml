@@ -1,0 +1,17 @@
+environments:
+
+  local:
+    scheme: http
+    host: localhost
+    
+  dev:
+    scheme: http
+    host: www.dev.electro-mech.com
+    
+  test:
+    scheme: http
+    host: www.test.electro-mech.com
+    
+  prod:
+    scheme: http
+    host: www.electro-mech.com
