@@ -40,7 +40,7 @@ public class HeedHelpFormTest extends BaseTest {
 	
 	@Test
 	public void testSendNeedHelpForm(){
-		//fill the form with correct data and send it to the server
+		//fill the form with correct data and send it to the server (test GIT conflict)
 	}
 	
 }
