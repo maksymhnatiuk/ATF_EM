@@ -25,7 +25,7 @@ public class HeedHelpFormTest extends BaseTest {
 	}
 	
 	//check validation of fields on the Need Help Form (DDT)
-	@Test (dataProvider = "CsvDataProvider", dataProviderClass = CsvDataProvider.class)
+/*	@Test (dataProvider = "CsvDataProvider", dataProviderClass = CsvDataProvider.class)
 	public void testFieldsValidation(Map<String, String> testData) {
 		needHelpPage.fillHeedHelpForm(
 	    			testData.get("name"), 
@@ -37,7 +37,7 @@ public class HeedHelpFormTest extends BaseTest {
 		needHelpPage.submitFormExpectingError();
 	    String allertText = new AlertPopUp(driver).closeAlertAndGetItsText();
 	    assertThat("Allert error message should be as expected", allertText, is(equalTo(testData.get("error_message"))));
-	}
+	}*/
 	
 	@Test
 	public void testSendNeedHelpForm(){
@@ -52,8 +52,13 @@ public class HeedHelpFormTest extends BaseTest {
 					"California", 
 					"AUTO_TEST question (NH)");
 		try {
+			Thread.sleep(1000);
+		} catch (Exception e) {}
+		try {
 			RequestInfoPage requestInfoPage = needHelpForm.clickRequestMoreInfoBtn();
-			/*requestInfoPage.loadAndWaitUntilAvailable();
+			//requestInfoPage.load();
+			requestInfoPage.waitUntilAvailable();
+			requestInfoPage.snapShotCurrentFormValues();
 			assertThat("Value of the Name field on the RequestInfoPage should be as expected: ", 
 						needHelpForm.nameInputValue, is(equalTo(requestInfoPage.nameInputValue)));
 			assertThat("Value of the Email field on the RequestInfoPage should be as expected: ", 
@@ -65,7 +70,7 @@ public class HeedHelpFormTest extends BaseTest {
 			assertThat("Value of the State field on the RequestInfoPage should be as expected: ", 
 						needHelpForm.stateDropValue, is(equalTo(requestInfoPage.stateDropDownValue)));
 			assertThat("Value of the Additional Information field on the RequestInfoPage should be as expected: ", 
-						needHelpForm.questionInputValue, is(equalTo(requestInfoPage.additionalInformationInputValue)));*/
+						needHelpForm.questionInputValue, is(equalTo(requestInfoPage.additionalInformationInputValue)));
 		} catch (Exception e) {
 			throw new RuntimeException("The Request Info page has not be loaded correctly. Check the test data - meybe it is incorrect. " + e.getStackTrace().toString());
 		}

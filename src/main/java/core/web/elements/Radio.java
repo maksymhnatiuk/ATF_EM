@@ -9,6 +9,9 @@ public class Radio extends WebComponent<Radio>{
 
 	public Radio(WebDriver driver, By findByMethod) {
 		super(driver, findByMethod);
-		
+	}
+	
+	public boolean isSelected (){
+		return getWebElement().isSelected();
 	}
 }

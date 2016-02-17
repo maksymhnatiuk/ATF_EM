@@ -33,22 +33,6 @@ public class RequestInfoPage extends WebPage<RequestInfoPage>{
 	
 	public RequestInfoPage(WebDriver driver) {
 		super(driver);
-		nameInputValue = getNameInput().getText();
-		companyInputValue = getCompanyInput().getText();
-		addressInputValue = getAddressInput().getText();
-		cityInputValue = getCityInput().getText();
-		zipInputValue = getZipInput().getText();
-		stateDropDownValue = getStateDropDown().getText();
-		phoneInputValue = getPhoneInput().getText();
-		emailInputValue = getEmailInput().getText();
-		sportDropDownValue = getSportDropDown().getText();
-		modelDropDownValue = getModelDropDown().getText();
-		colorDropDownValue = getColorDropDown().getText();
-		hardWiredDataCableRadioValue = getHardWiredDataCableRadio().getText();
-		scoreLinkWirelessRFRadioValue = getScoreLinkWirelessRFRadio().getText();
-		carryingCaseCheckBoxValue = getCarryingCaseCheckBox().getText();
-		sponsorPanelCheckBoxValue = getSponsorPanelCheckBox().getText();
-		additionalInformationInputValue = getAdditionalInformationInput().getText();
 	}
 
 	@Override
@@ -102,6 +86,51 @@ public class RequestInfoPage extends WebPage<RequestInfoPage>{
 		setCurrentlyEnteredValues(name, company, address, city, zip, state, phone, email, sport, model, color, 
 								setHardWiredDataCableRadio, setScoreLinkWirelessRFRadio, setCarryingCaseCheckBox, 
 								setSponsorPanelCheckBox, info);
+		return this;
+	}
+	
+	public RequestInfoPage snapShotCurrentFormValues (){
+		String hardWiredDataCableRadio;
+		String scoreLinkWirelessRFRadio;
+		String carryingCaseCheckBox;
+		String sponsorPanelCheckBox;
+		
+		if (getHardWiredDataCableRadio().isSelected()){
+			hardWiredDataCableRadio = "1";
+		} else {hardWiredDataCableRadio = "0";
+		}
+		if (getScoreLinkWirelessRFRadio().isSelected()) {
+			scoreLinkWirelessRFRadio = "1";
+		} else {
+			scoreLinkWirelessRFRadio = "0";
+		}
+		if (getCarryingCaseCheckBox().isSelected()) {
+			carryingCaseCheckBox = "1";
+		} else {
+			carryingCaseCheckBox = "0";
+		}
+		if (getSponsorPanelCheckBox().isSelected()) {
+			sponsorPanelCheckBox = "1";
+		} else {
+			sponsorPanelCheckBox = "0";
+		}
+		setCurrentlyEnteredValues(
+				getNameInput().getText(), 
+				getCompanyInput().getText(), 
+				getAddressInput().getText(), 
+				getCityInput().getText(), 
+				getZipInput().getText(), 
+				getStateDropDown().getText(),
+				getPhoneInput().getText(), 
+				getEmailInput().getText(), 
+				getSportDropDown().getText(), 
+				getModelDropDown().getText(), 
+				getColorDropDown().getText(), 
+				hardWiredDataCableRadio, 
+				scoreLinkWirelessRFRadio, 
+				carryingCaseCheckBox, 
+				sponsorPanelCheckBox, 
+				getAdditionalInformationInput().getText());
 		return this;
 	}
 	

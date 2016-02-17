@@ -9,6 +9,9 @@ public class CheckBox extends WebComponent<CheckBox>{
 
 	public CheckBox(WebDriver driver, By findByMethod) {
 		super(driver, findByMethod);
-		
+	}
+	
+	public boolean isSelected (){
+		return getWebElement().isSelected();
 	}
 }
