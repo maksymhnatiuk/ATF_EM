@@ -14,7 +14,9 @@ public class DropDown extends WebComponent<DropDown>{
 	
 	public DropDown selectByVisibleText(String text){
 		Select dropDown = new Select(getWebElement());
+		
 		dropDown.selectByVisibleText(text);
+		
 		return this;		
 	}
 

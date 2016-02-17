@@ -13,7 +13,13 @@ public class NeedHelpPage extends WebPage<NeedHelpPage>{
 
 	private static final String PAGE_URL = BASE_URL + "/";
 	
-	
+	public String nameInputValue;
+	public String emailInputValue;
+	public String phoneInputValue;
+	public String sportDropValue;
+	public String stateDropValue;
+	public String questionInputValue;
+		
 	public NeedHelpPage(WebDriver driver) {
 		super(driver);
 	}
@@ -50,21 +56,25 @@ public class NeedHelpPage extends WebPage<NeedHelpPage>{
 	public void fillNameInput(String text){
 		getNameInput().inputClear();
 		getNameInput().inputText(text);
+		nameInputValue = text;
 	}
 	
 	public void fillEmailInput(String text){
 		getEmailInput().inputClear();
 		getEmailInput().inputText(text);
+		emailInputValue = text;
 	}
 	
 	public void fillPhoneInput(String text){
 		getPhoneInput().inputClear();
 		getPhoneInput().inputText(text);
+		phoneInputValue = text;
 	}
 	
 	public void fillSportDrop(String text){
 		try {
 			getSportDropDown().selectByVisibleText(text);
+			sportDropValue = text;
 		} catch (Exception e) {
 			e = new Exception("The Sport drop-down has no value: " + text);
 		}
@@ -73,6 +83,7 @@ public class NeedHelpPage extends WebPage<NeedHelpPage>{
 	public void fillStateDrop(String text){
 		try {
 			getStateDropDown().selectByVisibleText(text);
+			stateDropValue = text;
 		} catch (Exception e) {
 			e = new Exception("The State drop-down has no value: " + text);
 		}
@@ -81,6 +92,7 @@ public class NeedHelpPage extends WebPage<NeedHelpPage>{
 	public void fillQuestionInput(String text){
 		getQuestionInput().inputClear();
 		getQuestionInput().inputText(text);
+		questionInputValue = text;
 	}
 	
 	public NeedHelpPage submitFormExpectingError (){

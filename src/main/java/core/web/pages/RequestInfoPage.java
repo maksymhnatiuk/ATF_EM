@@ -14,8 +14,41 @@ public class RequestInfoPage extends WebPage<RequestInfoPage>{
 
 	private static final String PAGE_URL = BASE_URL + "/request-info/";
 	
+	public String nameInputValue;
+	public String companyInputValue;
+	public String addressInputValue;
+	public String cityInputValue;
+	public String zipInputValue;
+	public String stateDropDownValue;
+	public String phoneInputValue;
+	public String emailInputValue;
+	public String sportDropDownValue;
+	public String modelDropDownValue;
+	public String colorDropDownValue;
+	public String hardWiredDataCableRadioValue;
+	public String scoreLinkWirelessRFRadioValue;
+	public String carryingCaseCheckBoxValue;
+	public String sponsorPanelCheckBoxValue;
+	public String additionalInformationInputValue;
+	
 	public RequestInfoPage(WebDriver driver) {
 		super(driver);
+		nameInputValue = getNameInput().getText();
+		companyInputValue = getCompanyInput().getText();
+		addressInputValue = getAddressInput().getText();
+		cityInputValue = getCityInput().getText();
+		zipInputValue = getZipInput().getText();
+		stateDropDownValue = getStateDropDown().getText();
+		phoneInputValue = getPhoneInput().getText();
+		emailInputValue = getEmailInput().getText();
+		sportDropDownValue = getSportDropDown().getText();
+		modelDropDownValue = getModelDropDown().getText();
+		colorDropDownValue = getColorDropDown().getText();
+		hardWiredDataCableRadioValue = getHardWiredDataCableRadio().getText();
+		scoreLinkWirelessRFRadioValue = getScoreLinkWirelessRFRadio().getText();
+		carryingCaseCheckBoxValue = getCarryingCaseCheckBox().getText();
+		sponsorPanelCheckBoxValue = getSponsorPanelCheckBox().getText();
+		additionalInformationInputValue = getAdditionalInformationInput().getText();
 	}
 
 	@Override
@@ -65,7 +98,10 @@ public class RequestInfoPage extends WebPage<RequestInfoPage>{
 		if (setScoreLinkWirelessRFRadio == "1") {getScoreLinkWirelessRFRadio().click();}
 		if (setCarryingCaseCheckBox == "1") {getCarryingCaseCheckBox().click();}
 		if (setSponsorPanelCheckBox == "1") {getSponsorPanelCheckBox().click();}
-		getAdditionalInformationInput().inputText(info);;
+		getAdditionalInformationInput().inputText(info);
+		setCurrentlyEnteredValues(name, company, address, city, zip, state, phone, email, sport, model, color, 
+								setHardWiredDataCableRadio, setScoreLinkWirelessRFRadio, setCarryingCaseCheckBox, 
+								setSponsorPanelCheckBox, info);
 		return this;
 	}
 	
@@ -144,6 +180,28 @@ public class RequestInfoPage extends WebPage<RequestInfoPage>{
 	
 	private Button getAQuotebtn (){
 		return new Button(driver, By.xpath("//input[@value='Click to Get a Quote']"));
+	}
+	
+	private void setCurrentlyEnteredValues(String name, String company, String address, String city, String zip,
+			String state, String phone, String email, String sport, String model,
+			String color, String setHardWiredDataCableRadio, String setScoreLinkWirelessRFRadio, 
+			String setCarryingCaseCheckBox, String setSponsorPanelCheckBox, String info){
+		nameInputValue = name;
+		companyInputValue = company;
+		addressInputValue = address;
+		cityInputValue = city;
+		zipInputValue = zip;
+		stateDropDownValue = state;
+		phoneInputValue = phone;
+		emailInputValue = email;
+		sportDropDownValue = sport;
+		modelDropDownValue = model;
+		colorDropDownValue = color;
+		hardWiredDataCableRadioValue = setHardWiredDataCableRadio;
+		scoreLinkWirelessRFRadioValue = setScoreLinkWirelessRFRadio;
+		carryingCaseCheckBoxValue = setCarryingCaseCheckBox;
+		sponsorPanelCheckBoxValue = setSponsorPanelCheckBox;
+		additionalInformationInputValue = info;
 	}
 
 }
