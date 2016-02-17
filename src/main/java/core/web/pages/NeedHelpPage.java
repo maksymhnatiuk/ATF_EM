@@ -33,7 +33,8 @@ public class NeedHelpPage extends WebPage<NeedHelpPage>{
 				getQuestionInput().isAvailable() &&
 				getSportDropDown().isAvailable() &&
 				getStateDropDown().isAvailable() &&
-				getQuoteButton().isAvailable();
+				getRequestMoreInfoBtn().isAvailable() &&
+				getRequestCatalogBtn().isAvailable();
 	}
 	
 	public NeedHelpPage fillHeedHelpForm (String name, String email, String phone, String sport, String state, String question){
@@ -83,13 +84,18 @@ public class NeedHelpPage extends WebPage<NeedHelpPage>{
 	}
 	
 	public NeedHelpPage submitFormExpectingError (){
-		getQuoteButton().click();
+		getRequestMoreInfoBtn().click();
 		return this;
 	}
 	
-	public QuoteRequestPage submitForm (){
-		getQuoteButton().click();
-		return new QuoteRequestPage(driver).waitUntilAvailable();
+	public RequestInfoPage clickRequestMoreInfoBtn(){
+		getRequestMoreInfoBtn().click();
+		return new RequestInfoPage(driver);
+	}
+	
+	public RequestCatalogPage clickRequestCatalogBtn (){
+		getRequestCatalogBtn().click();
+		return new RequestCatalogPage(driver);
 	}
 	
 	private TextInput getNameInput (){
@@ -116,8 +122,12 @@ public class NeedHelpPage extends WebPage<NeedHelpPage>{
 		return new TextInput(driver, By.name("question"));
 	}
 	
-	private Button getQuoteButton (){
+	private Button getRequestMoreInfoBtn (){
 		return new Button(driver, By.id("quote-button"));
+	}
+	
+	private Button getRequestCatalogBtn(){
+		return new Button(driver, By.id("request-catalog-button"));
 	}
 	
 }

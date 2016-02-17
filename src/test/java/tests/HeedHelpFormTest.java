@@ -12,6 +12,7 @@ import core.BaseTest;
 import core.CsvDataProvider;
 import core.web.elements.AlertPopUp;
 import core.web.pages.NeedHelpPage;
+import core.web.pages.RequestInfoPage;
 
 public class HeedHelpFormTest extends BaseTest {
 	
@@ -41,6 +42,17 @@ public class HeedHelpFormTest extends BaseTest {
 	@Test
 	public void testSendNeedHelpForm(){
 		//fill the form with correct data and send it to the server (test GIT conflict)
+		NeedHelpPage needHelpForm = new NeedHelpPage(driver).load();
+		needHelpForm.waitUntilAvailable();
+		needHelpForm.fillHeedHelpForm(
+					"AUTO_TEST name (NH)", 
+					"AUTO_TEST email (NH)", 
+					"AUTO_TEST phone (NH)", 
+					"Soccer", 
+					"California", 
+					"AUTO_TEST question (NH)");
+		RequestInfoPage requestInfoPage = needHelpForm.clickRequestMoreInfoBtn();
+		requestInfoPage.loadAndWaitUntilAvailable();
 	}
 	
 }
