@@ -115,14 +115,14 @@ public class RequestInfoPage extends WebPage<RequestInfoPage>{
 			sponsorPanelCheckBox = "0";
 		}
 		setCurrentlyEnteredValues(
-				getNameInput().getText(), 
-				getCompanyInput().getText(), 
-				getAddressInput().getText(), 
-				getCityInput().getText(), 
-				getZipInput().getText(), 
+				getNameInput().getAtributValue("value"), 
+				getCompanyInput().getAtributValue("value"), 
+				getAddressInput().getAtributValue("value"), 
+				getCityInput().getAtributValue("value"), 
+				getZipInput().getAtributValue("value"), 
 				getStateDropDown().getText(),
-				getPhoneInput().getText(), 
-				getEmailInput().getText(), 
+				getPhoneInput().getAtributValue("value"), 
+				getEmailInput().getAtributValue("value"), 
 				getSportDropDown().getText(), 
 				getModelDropDown().getText(), 
 				getColorDropDown().getText(), 

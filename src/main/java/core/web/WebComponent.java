@@ -34,5 +34,9 @@ public abstract class WebComponent <T extends WebComponent<T>> extends Component
 	public String getText(){
 		return getWebElement().getText();
 	}
+	
+	public String getAtributValue(String atributeName){
+		return getWebElement().getAttribute(atributeName);
+	}
 
 }

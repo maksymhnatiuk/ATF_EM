@@ -1,5 +1,4 @@
 case_no,case_name,name,email,phone,sport,state,question,error_message
-1,fill the form with empty name and check the error message,,AUTO_TEST-NH@mail.com,1234567890,Soccer,Indiana,AUTO_TEST question (NH),Please fill out your name correctly
 2,"fill the form with name, "" "" and check the error message", ,AUTO_TEST-NH@mail.com,1234567890,Soccer,Indiana,AUTO_TEST question (NH),Please fill out your name correctly
 3,fill the form with too short name:  A and check the error message,A,AUTO_TEST-NH@mail.com,1234567890,Soccer,Indiana,AUTO_TEST question (NH),Please fill out your name correctly
 4,fill the form with name which contains digits:  A1 and check the error message,A1,AUTO_TEST-NH@mail.com,1234567891,Soccer,Indiana,AUTO_TEST question (NH),Please fill out your name correctly
