@@ -2,7 +2,9 @@ package core;
 // Base class for all tests (it configures Driver for tests)
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
@@ -13,7 +15,7 @@ public abstract class BaseTest {
     
 	protected WebDriver driver;
 	
-	@BeforeSuite(alwaysRun = true)
+	@BeforeTest(alwaysRun = true)
 	@Parameters({"browser", "environment"})
 	public void setUp (@Optional ("firefox") String browser, @Optional ("prod") String environment){
 		/*
@@ -39,7 +41,7 @@ public abstract class BaseTest {
 		driver.manage().window().maximize();
 	}
 	
-	@AfterSuite(alwaysRun = true)
+	@AfterTest(alwaysRun = true)
 	public void tearDown(){
 		driver.quit();
 	}

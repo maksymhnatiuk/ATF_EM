@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Smoke tests" parallel="classes" thread-count="4">
+ <test verbose="1" name="Smoke tests on FireFox" annotations="JDK">
+ 	<parameter name="browser" value="firefox"></parameter>
+ 	<parameter name="environment" value="prod"></parameter>
+    
+    <groups>
+    	<run> 
+    		<include name="smoke"/>
+    	</run>
+    </groups>
+    
+    <packages>
+     	<package name="tests"/>
+    </packages>
+  </test>
+</suite>
