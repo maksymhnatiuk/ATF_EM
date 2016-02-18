@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNG config suites to execute">
+  <suite-files>
+ 	<suite-file path="testng_suites/suites/fields_validation.xml"/>
+	<suite-file path="testng_suites/suites/smoke.xml"/>     
+  </suite-files>
+</suite>

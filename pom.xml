@@ -68,7 +68,7 @@
                 		<environment>${environment}</environment>
                 	</systemPropertyVariables>
                 	<suiteXmlFiles>
-          				<suiteXmlFile>testng.xml</suiteXmlFile>
+          				<suiteXmlFile>testng_suites/testng_config_suites.xml</suiteXmlFile>
          			</suiteXmlFiles>
                 	<parallel>methods</parallel>
 			        <threadCount>2</threadCount>

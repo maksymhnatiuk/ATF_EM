@@ -9,10 +9,10 @@ import core.CsvDataProvider;
 
 public class QuoteRequestFormTest extends BaseTest{
 
-	@Test (groups = {"validation"},
+	/*@Test (groups = {"validation"},
 			priority = 0,
 			dataProvider = "CsvDataProvider", 
-			dataProviderClass = CsvDataProvider.class)
+			dataProviderClass = CsvDataProvider.class)*/
 	public void testFieldsValidation (Map <String, String> testData){
 		
 	}

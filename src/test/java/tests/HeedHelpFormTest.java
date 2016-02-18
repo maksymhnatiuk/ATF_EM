@@ -6,7 +6,7 @@ import static org.hamcrest.Matchers.is;
 
 import java.util.Map;
 
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import core.BaseTest;
@@ -19,7 +19,7 @@ public class HeedHelpFormTest extends BaseTest {
 	
 	private NeedHelpPage needHelpPage;
 	
-	@BeforeMethod (alwaysRun = true, description = "Create and load new NeedHelpPage")
+	@BeforeClass (alwaysRun = true, description = "Create and load new NeedHelpPage")
 	public void setUp(){
 		needHelpPage = new NeedHelpPage(driver).load();
 		needHelpPage.waitUntilAvailable();
